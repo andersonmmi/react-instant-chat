@@ -13,7 +13,7 @@ class ChatApp extends React.Component {
     super(props);
     this.state = { messages: [] };
     this.sendHandler = this.sendHandler.bind(this);
-    
+
     // Connect to the server
     this.socket = io(config.api, { query: `username=${props.username}` }).connect();
 
@@ -46,7 +46,7 @@ class ChatApp extends React.Component {
   render() {
     return (
       <div className="container">
-        <h3>React Chat App</h3>
+        <h3>Guest Chat</h3>
         <Messages messages={this.state.messages} />
         <ChatInput onSend={this.sendHandler} />
       </div>
